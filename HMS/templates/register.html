@@ -1,0 +1,93 @@
+<!--<html>
+    <head>
+        <title>Registration Form</title>
+    </head>
+    <body>
+        <div>
+            <form action="" method="POST">
+                {% csrf_token %}
+                username: <input type="text" name="username"/><br>
+                first_name:<input type="text" name="first_name"/><br>
+                last_name:<input type="text" name="last_name"/><br>
+                Email Id:<input type="email" name="email"/><br>
+                password:<input type="password" name="password"/><br>
+                <input type="submit"/>
+            </form>
+        </div>
+       
+    </body>
+</html> -->    
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sign Up Form by Colorlib</title>
+
+    <!-- Font Icon -->
+    <link rel="stylesheet" href="{% static 'register/fonts/material-icon/css/material-design-iconic-font.min.css' %}">
+
+    <!-- Main css -->
+    <link rel="stylesheet" href="{% static 'register/css/style.css' %}">
+    <style>
+        body{
+        border: 1px solid transparent;
+        background:  -webkit-linear-gradient(to right,#cccccc, #ff7a5c);
+        background: -moz-linear-gradient(to right, #cccccc, #ff7a5c);
+        background: -o-linear-gradient(to right,#cccccc, #ff7a5c);
+        background: linear-gradient(to right, #cccccc, #ff7a5c);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="reg">
+
+        <section class="signup">
+            <!-- <img src="images/signup-bg.jpg" alt=""> -->
+            <div class="container">
+                <div class="signup-content">
+                    <form action="" method="POST" id="signup-form" class="signup-form">
+                        {%csrf_token %}
+                        <h2 class="form-title">Register</h2>
+                        <div class="form-group">
+                            <input type="text" class="form-input" name="username" id="name" placeholder="User Name"/>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-input" name="first_name" id="first_name" placeholder="First Name"/>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-input" name="last_name" id="last name" placeholder="Last Name"/>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" class="form-input" name="email" id="email" placeholder="Your Email"/>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-input" name="password" id="password" placeholder="Password"/>
+                            <span toggle="#password" class="zmdi zmdi-eye field-icon toggle-password"></span>
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" name="submit" id="submit" class="form-submit" value="Register"/>
+                        </div>
+                    </form>
+                    <p class="loginhere">
+                        Have already an account ? <a href="/home/login" class="loginhere-link">Login here</a>
+                    </p>
+                    <div>
+                        {% for message in messages %}
+                        <h3 style="color: darkred;">{{message}}</h3>
+                        {% endfor %} 
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- JS -->
+    <script src="{% static 'register/vendor/jquery/jquery.min.js' %}"></script>
+    <script src="{% static 'register/js/main.js' %}"></script>
+</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+</html>

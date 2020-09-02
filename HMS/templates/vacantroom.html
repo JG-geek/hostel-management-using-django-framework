@@ -1,0 +1,35 @@
+<html>
+    <head>
+    </head>
+    <title>Book Room</title>
+    <body>
+        <form action="vacantroom" method="POST">
+            {% csrf_token %}
+            <h3>select the type of room you want</h3>
+            Room Type:<select name="type">
+                <option>standard</option>
+                <option>deluxe</option>
+                <option>superdelux</option>
+            </select>
+            <input type="submit" value="submit">
+        </form>
+        {% if vacant_rooms %}
+        <h3>list of vacant rooms</h3><br>
+        <table>
+            <tr>
+                <td>Building 1</td>
+                <td>Building 2</td>
+            </tr>
+            {% for room,room1 in vacant_rooms %}
+            <tr>
+                <td>{{room.room_no}}</td>
+                <td>{{room1.room_no}}</td>                
+            </tr>
+            {% endfor %}
+        </table>
+        <div>
+            <a href="/home/register/bookroom">Book Room</a>
+        </div>
+        {% endif %}
+    </body>
+</html>

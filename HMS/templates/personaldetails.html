@@ -1,0 +1,95 @@
+<html>
+    <head>
+        <title>Personal Details</title>
+    </head>
+    <body>
+        <h1> enter your personal details here.</h1>
+        <div>
+            <form action="personaldetails" method="POST">
+                {% csrf_token %}
+                <table>
+                    <tr>
+                        <td>
+                            <input type="text" name="user_name" placeholder="user name"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="text" name="full_name" placeholder="full name"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="text" name="father_name" placeholder="father's name"/>
+                        </td>
+                    </tr>
+                    <tr>
+                            <td>
+                            <input type="text" name="mother_name" placeholder="mother's name"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="text" name="father_occupation" placeholder="father's occupation"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="text" name="mother_occupation" placeholder="mother's occupation"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="text" name="current_address" placeholder="current address" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="text" name="permanent_address" placeholder="permanent address" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="date" name="date_of_birth" placeholder="date of birth" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="text" name="age" placeholder="age" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="text" name="contact_number" placeholder="contact" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="text" name="gender" placeholder="gender" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="text" name="city" placeholder="city" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="text" name="state" placeholder="state" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="text" name="pincode" placeholder="pincode" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="submit" name="submit"/>
+                        </td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+    </body>
+</html>

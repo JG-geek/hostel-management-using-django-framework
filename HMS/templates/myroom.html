@@ -1,0 +1,76 @@
+{% load static %}
+<html>
+    <head>
+        <title>My Room</title>
+        <style>
+            .navbar{
+                overflow: hidden;
+                background-color:#cccccc;
+            }
+            .navbar a{
+                float: left;
+                display: block;
+                color: black;
+                text-align: center;
+                padding: 14px 16px;
+                text-decoration: none;
+                font-family: Arial, Helvetica, sans-serif;
+            }
+            .navbar a:hover{
+                background-color:darkgrey;
+                color: black;
+            }
+            .navbar .nav>.active>a, .navbar .nav>.active>a:hover, .navbar .nav>.active>a:focus {
+                color: #555555;
+                text-decoration: none;
+                background-color: #e5e5e5;
+            }
+            body{
+               
+                background: #9152f8;
+                background: -webkit-linear-gradient(top,#cccccc, #ff7a5c);
+                background: -o-linear-gradient(top,#cccccc, #ff7a5c);
+                background: -moz-linear-gradient(top,#cccccc, #ff7a5c);
+                background: linear-gradient(top,#cccccc, #ff7a5c);
+                }
+            
+        </style>
+    </head>
+    <body>
+        <div class="navbar">
+            <a href="/home/login/homeview">Home</a>
+            <a href="/home/myroom">My Room</a>
+            <a href="/home/logout">Logout</a>
+        </div>
+        <div class="details">
+        <table  width="500"  border="1" cellpadding="5" cellspacing="0">
+            <tr>
+                <td>name</td>
+                <td>{{student.full_name}}</td>
+            </tr>
+            <tr>
+                <td>Room no.</td>
+                <td>{{room.room_no}}</td>
+            </tr>
+            <tr>
+                <td>Building no.</td>
+                <td>{{room.building_no}}</td>
+            </tr>
+            <tr>
+                <td>Room type</td>
+                <td>{{room.room_type}}</td>
+            </tr>
+            <tr>
+                <td>Room partners</td>
+                <td><ul>
+                {% for roomie in roompartners %}
+                <li>
+                {{roomie}}<br></li>
+                {% endfor %}</ul>
+                </td>
+              
+            </tr>
+        </table>
+        </div>
+    </body>
+</html>

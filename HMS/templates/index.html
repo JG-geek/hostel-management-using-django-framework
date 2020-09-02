@@ -1,0 +1,59 @@
+{% load static %}
+<html>
+    <head>
+        <title>Home Page</title>
+        <style>
+        body {
+            padding: 20px;
+          background-color:#74BDCB;/* floralwhite*/
+          background-image: url("{% static 'image.jpeg' %}");
+          background-repeat: no-repeat;
+          background-position: center;
+        }
+
+        h1 {
+          color:teal;
+          font-family: sans-serif;
+          text-align: center;
+          margin-left: 15px;
+        }
+        .topnav{
+            overflow: hidden;
+            background-color: #FFA384;
+        }
+        .topnav a{
+            float: left;
+            display: block;
+            color: black;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .topnav a:hover{
+            background-color: #74BDCB;
+            color: black;
+        }
+        </style>
+    </head>
+    <body>
+        {% if user.is_authenticated %}
+        <h1> hello {{user.first_name}}</h1><br>
+        {% else %}
+        <h1>Welcome to Hostel Management System</h1>
+        <br>
+        {% endif %}
+        <div class="topnav">
+            {% if user.is_authenticated %}
+           
+            <a href="/home/logout">Logout</a>
+            {% else %}
+            <a href="/home/login">Login</a>
+            <a href="/home/register">Register/Sign Up</a>
+            {% endif %}
+            <a href="/home/example">Facilities</a>
+            <a href="#">About Us</a>
+        </div>
+        
+    </body>
+</html>

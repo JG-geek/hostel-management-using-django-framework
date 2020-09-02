@@ -1,0 +1,24 @@
+<html>
+    <head>
+        <title>Login Page</title>
+    </head>
+
+    <body>
+      <!--  {% if form.errors %}
+        <p class="error">Invalid username or password</p>
+        {% endif %} -->
+        <div>
+            <form action="" method="post">
+                {% csrf_token %}
+                username:<input type="text" name="username"/>
+                <br><br>
+                password:<input type="password" name="password"/>
+                <br><br>
+                <input type="submit" value="login"/>
+            </form>
+            {% for message in messages %}
+            <h3 style="color:darkred">{{message}}</h3>
+            {% endfor %}
+        </div>
+    </body>
+</html>
